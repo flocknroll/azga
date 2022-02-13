@@ -1,206 +1,204 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FSData version="9.0" timestamp="1/1/1601 12:00:00 AM">
-  <Airport country="France" city="Le Cateau-Cambrésis" name="Supreme Leader Airport" region="Europe" lat="50.103807896375656" lon="3.5068751871585846" alt="138.14M" ident="AZGA" trafficScalar="1" isOnTIN="FALSE" onlyAddIfReplace="FALSE" applyFlatten="TRUE" starAirport="FALSE" closed="FALSE">
-    <Waypoint lon="3.6318670213222504" lat="49.95584115386009" waypointType="NAMED" waypointRegion="LF" waypointIdent="IF33R" magvar="0" />
-    <Waypoint lon="3.3674611151218414" lat="50.24956114590168" waypointType="NAMED" waypointRegion="LF" waypointIdent="IF15L" magvar="0" />
-    <Waypoint lon="3.633391410112381" lat="49.94805905967951" waypointType="NAMED" waypointRegion="LF" waypointIdent="IF33L" magvar="0" />
-    <Waypoint lon="3.361816853284836" lat="50.249816961586475" waypointType="NAMED" waypointRegion="LF" waypointIdent="IF15R" magvar="0" />
-    <Departure name="EMMAN3">
-      <RunwayTransitions>
-        <RunwayTransitionLegs>
-          <Leg type="CF" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF15R" flyOver="TRUE" recommendedType="RUNWAY" recommendedRegion="LF" recommendedIdent="RW33L" theta="330" rho="10.0N" magneticCourse="330" distance="10.0N" altitudeDescriptor="+" altitude1="6000.0F" />
-          <Leg type="DF" fixType="WAYPOINT" fixRegion="LF" fixIdent="CDVLL" flyOver="FALSE" turnDirection="L" altitudeDescriptor="+" altitude1="12000.0F" />
-        </RunwayTransitionLegs>
-        <RunwayTransitionLegs>
-          <Leg type="CF" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF15L" flyOver="TRUE" recommendedType="RUNWAY" recommendedRegion="LF" recommendedIdent="RW33R" theta="330" rho="10.0N" magneticCourse="330" distance="10.0N" altitudeDescriptor="+" altitude1="6000.0F" />
-          <Leg type="DF" fixType="WAYPOINT" fixRegion="LF" fixIdent="CDVLL" flyOver="FALSE" turnDirection="L" altitudeDescriptor="+" altitude1="12000.0F" />
-        </RunwayTransitionLegs>
-      </RunwayTransitions>
-      <CommonRouteLegs>
-        <Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="CDVLL" altitudeDescriptor="+" altitude1="12000.0F" />
-        <Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="BENIC" flyOver="FALSE" altitudeDescriptor="+" altitude1="20000.0F" />
-      </CommonRouteLegs>
-      <EnrouteTransitions />
-    </Departure>
-    <Departure name="VALOU3">
-      <RunwayTransitions>
-        <RunwayTransitionLegs>
-          <Leg type="CF" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF15R" flyOver="TRUE" recommendedType="RUNWAY" recommendedRegion="LF" recommendedIdent="RW33L" theta="330" rho="10.0N" magneticCourse="330" distance="10.0N" altitudeDescriptor="+" altitude1="6000.0F" />
-          <Leg type="DF" fixType="WAYPOINT" fixRegion="LF" fixIdent="LYKII" flyOver="FALSE" turnDirection="R" altitudeDescriptor="+" altitude1="15000.0F" />
-        </RunwayTransitionLegs>
-        <RunwayTransitionLegs>
-          <Leg type="CF" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF15L" flyOver="TRUE" recommendedType="RUNWAY" recommendedRegion="LF" recommendedIdent="RW33R" theta="330" rho="10.0N" magneticCourse="330" distance="10.0N" altitudeDescriptor="+" altitude1="6000.0F" />
-          <Leg type="DF" fixType="WAYPOINT" fixRegion="LF" fixIdent="LYKII" flyOver="FALSE" turnDirection="R" altitudeDescriptor="+" altitude1="15000.0F" />
-        </RunwayTransitionLegs>
-      </RunwayTransitions>
-      <CommonRouteLegs />
-      <EnrouteTransitions />
-    </Departure>
-    <Departure name="AYMER1">
-      <RunwayTransitions>
-        <RunwayTransitionLegs>
-          <Leg type="CF" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF33R" flyOver="TRUE" recommendedType="RUNWAY" recommendedRegion="LF" recommendedIdent="RW15L" theta="150" rho="10.0N" magneticCourse="150" distance="10.0N" altitudeDescriptor="+" altitude1="6000.0F" />
-          <Leg type="DF" fixType="WAYPOINT" fixRegion="LF" fixIdent="YVOUN" flyOver="FALSE" turnDirection="R" altitudeDescriptor="+" altitude1="15000.0F" />
-        </RunwayTransitionLegs>
-        <RunwayTransitionLegs>
-          <Leg type="CF" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF33L" flyOver="TRUE" recommendedType="RUNWAY" recommendedRegion="LF" recommendedIdent="RW15R" theta="150" rho="10.0N" magneticCourse="150" distance="10.0N" altitudeDescriptor="+" altitude1="6000.0F" />
-          <Leg type="DF" fixType="WAYPOINT" fixRegion="LF" fixIdent="YVOUN" flyOver="FALSE" turnDirection="R" altitudeDescriptor="+" altitude1="15000.0F" />
-        </RunwayTransitionLegs>
-      </RunwayTransitions>
-      <CommonRouteLegs />
-      <EnrouteTransitions />
-    </Departure>
-    <Departure name="WHEEL1">
-      <RunwayTransitions>
-        <RunwayTransitionLegs>
-          <Leg type="CF" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF33R" flyOver="TRUE" recommendedType="RUNWAY" recommendedRegion="LF" recommendedIdent="RW15L" theta="150" rho="10.0N" magneticCourse="150" distance="10.0N" altitudeDescriptor="+" altitude1="6000.0F" />
-          <Leg type="DF" fixType="WAYPOINT" fixRegion="LF" fixIdent="MONFX" flyOver="FALSE" turnDirection="L" altitudeDescriptor="+" altitude1="15000.0F" />
-        </RunwayTransitionLegs>
-        <RunwayTransitionLegs>
-          <Leg type="CF" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF33L" flyOver="TRUE" recommendedType="RUNWAY" recommendedRegion="LF" recommendedIdent="RW15R" theta="150" rho="10.0N" magneticCourse="150" distance="10.0N" altitudeDescriptor="+" altitude1="6000.0F" />
-          <Leg type="DF" fixType="WAYPOINT" fixRegion="LF" fixIdent="MONFX" flyOver="FALSE" turnDirection="L" altitudeDescriptor="+" altitude1="15000.0F" />
-        </RunwayTransitionLegs>
-      </RunwayTransitions>
-      <CommonRouteLegs />
-      <EnrouteTransitions />
-    </Departure>
-    <Arrival name="MEGAN1">
-      <EnrouteTransitions />
-      <CommonRouteLegs>
-        <Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="LUDOV" altitudeDescriptor="-" altitude1="20000.0F" />
-        <Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="ADIBO" flyOver="FALSE" altitudeDescriptor="-" altitude1="15000.0F" />
-        <Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="ZEBLO" flyOver="FALSE" altitudeDescriptor="-" altitude1="11000.0F" />
-      </CommonRouteLegs>
-      <RunwayTransitions />
-    </Arrival>
-    <Arrival name="NATHA3">
-      <EnrouteTransitions />
-      <CommonRouteLegs>
-        <Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="LUDOV" altitudeDescriptor="-" altitude1="30000.0F" />
-        <Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="KNAKI" flyOver="FALSE" altitudeDescriptor="-" altitude1="25000.0F" />
-        <Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="DIDRL" flyOver="FALSE" altitudeDescriptor="-" altitude1="18000.0F" />
-      </CommonRouteLegs>
-      <RunwayTransitions />
-    </Arrival>
-    <Arrival name="SYLVR1">
-      <EnrouteTransitions />
-      <CommonRouteLegs>
-        <Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="AZGAR" altitudeDescriptor="-" altitude1="26000.0F" />
-        <Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="LUKYN" flyOver="FALSE" altitudeDescriptor="-" altitude1="15000.0F" />
-        <Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="TWENT" flyOver="FALSE" altitudeDescriptor="-" altitude1="10000.0F" />
-      </CommonRouteLegs>
-      <RunwayTransitions />
-    </Arrival>
-    <Arrival name="ELLIO3">
-      <EnrouteTransitions />
-      <CommonRouteLegs>
-        <Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="AZGAR" altitudeDescriptor="-" altitude1="24000.0F" />
-        <Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="PYRAX" flyOver="FALSE" altitudeDescriptor="-" altitude1="16000.0F" />
-      </CommonRouteLegs>
-      <RunwayTransitions />
-    </Arrival>
-    <Approach type="ILS" runway="33" designator="RIGHT" gpsOverlay="FALSE" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF33R" altitude="3000.0F" heading="330" missedAltitude="10000.0F" lnav="FALSE" lnavvnav="FALSE" lpv="FALSE" lp="FALSE">
-      <ApproachLegs>
-        <Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="DITES" recommendedType="LOCALIZER" recommendedIdent="VINC" theta="326" rho="10.0N" altitudeDescriptor="-" altitude1="6000.0F" />
-        <Leg type="TF" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF33R" flyOver="FALSE" recommendedType="LOCALIZER" recommendedIdent="VINC" theta="330" rho="10.0N" magneticCourse="330" distance="10.0N" altitudeDescriptor="-" altitude1="3000.0F" />
-        <Leg type="TF" fixType="RUNWAY" fixRegion="LF" fixIdent="RW33R" flyOver="TRUE" recommendedType="LOCALIZER" recommendedIdent="VINC" magneticCourse="330" />
-      </ApproachLegs>
-      <Transition transitionType="FULL" fixType="WAYPOINT" fixRegion="LF" fixIdent="PYRAX" altitude="16000.0F" name="">
-        <TransitionLegs>
-          <Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="PYRAX" altitudeDescriptor="-" altitude1="16000.0F" />
-          <Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="BENTR" flyOver="FALSE" altitudeDescriptor="-" altitude1="12000.0F" />
-          <Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="DITES" flyOver="FALSE" altitudeDescriptor="-" altitude1="6000.0F" />
-        </TransitionLegs>
-      </Transition>
-      <Transition transitionType="FULL" fixType="WAYPOINT" fixRegion="LF" fixIdent="DIDRL" altitude="18000.0F" name="">
-        <TransitionLegs>
-          <Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="DIDRL" altitudeDescriptor="-" altitude1="18000.0F" />
-          <Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="BENTR" flyOver="FALSE" altitudeDescriptor="-" altitude1="12000.0F" />
-          <Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="DITES" flyOver="FALSE" altitudeDescriptor="-" altitude1="6000.0F" />
-        </TransitionLegs>
-      </Transition>
-    </Approach>
-    <Approach type="ILS" runway="33" designator="LEFT" gpsOverlay="FALSE" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF33L" altitude="3000.0F" heading="330" missedAltitude="10000.0F" lnav="FALSE" lnavvnav="FALSE" lpv="FALSE" lp="FALSE">
-      <ApproachLegs>
-        <Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="DITES" recommendedType="LOCALIZER" recommendedIdent="VINC" theta="326" rho="10.0N" altitudeDescriptor="-" altitude1="6000.0F" />
-        <Leg type="TF" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF33L" flyOver="FALSE" recommendedType="LOCALIZER" recommendedIdent="COLC" theta="330" rho="10.0N" magneticCourse="330" distance="10.0N" altitudeDescriptor="-" altitude1="3000.0F" />
-        <Leg type="TF" fixType="RUNWAY" fixRegion="LF" fixIdent="RW33L" flyOver="TRUE" recommendedType="LOCALIZER" recommendedIdent="COLC" theta="330" rho="10.0N" magneticCourse="330" distance="10.0N" />
-      </ApproachLegs>
-      <Transition transitionType="FULL" fixType="WAYPOINT" fixRegion="LF" fixIdent="PYRAX" altitude="16000.0F" name="">
-        <TransitionLegs>
-          <Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="PYRAX" altitudeDescriptor="-" altitude1="16000.0F" />
-          <Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="BENTR" flyOver="FALSE" altitudeDescriptor="-" altitude1="12000.0F" />
-          <Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="DITES" flyOver="FALSE" altitudeDescriptor="-" altitude1="6000.0F" />
-        </TransitionLegs>
-      </Transition>
-      <Transition transitionType="FULL" fixType="WAYPOINT" fixRegion="LF" fixIdent="DIDRL" altitude="18000.0F" name="">
-        <TransitionLegs>
-          <Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="DIDRL" altitudeDescriptor="-" altitude1="18000.0F" />
-          <Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="BENTR" flyOver="FALSE" altitudeDescriptor="-" altitude1="12000.0F" />
-          <Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="DITES" flyOver="FALSE" altitudeDescriptor="-" altitude1="6000.0F" />
-        </TransitionLegs>
-      </Transition>
-    </Approach>
-    <Approach type="ILS" runway="15" designator="LEFT" gpsOverlay="FALSE" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF15L" altitude="3000.0F" heading="150" missedAltitude="10000.0F" lnav="FALSE" lnavvnav="FALSE" lpv="FALSE" lp="FALSE">
-      <ApproachLegs>
-        <Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="MPEPE" recommendedType="LOCALIZER" recommendedIdent="DAMO" theta="160" rho="10.0N" altitudeDescriptor="-" altitude1="6000.0F" />
-        <Leg type="TF" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF15L" flyOver="FALSE" recommendedType="LOCALIZER" recommendedIdent="DAMO" theta="150" rho="10.0N" magneticCourse="160" distance="10.0N" altitudeDescriptor="-" altitude1="3000.0F" />
-        <Leg type="TF" fixType="RUNWAY" fixRegion="LF" fixIdent="RW15L" flyOver="TRUE" recommendedType="LOCALIZER" recommendedIdent="DAMO" theta="150" rho="10.0N" magneticCourse="150" distance="10.0N" />
-      </ApproachLegs>
-      <Transition transitionType="FULL" fixType="WAYPOINT" fixRegion="LF" fixIdent="ZEBLO" altitude="11000.0F" name="">
-        <TransitionLegs>
-          <Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="ZEBLO" altitudeDescriptor="-" altitude1="11000.0F" />
-          <Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="MPEPE" flyOver="FALSE" altitudeDescriptor="-" altitude1="6000.0F" />
-        </TransitionLegs>
-      </Transition>
-      <Transition transitionType="FULL" fixType="WAYPOINT" fixRegion="LF" fixIdent="TWENT" altitude="10000.0F" name="">
-        <TransitionLegs>
-          <Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="TWENT" altitudeDescriptor="-" altitude1="10000.0F" />
-          <Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="MPEPE" flyOver="FALSE" altitudeDescriptor="-" altitude1="6000.0F" />
-        </TransitionLegs>
-      </Transition>
-    </Approach>
-    <Approach type="ILS" runway="15" designator="RIGHT" gpsOverlay="FALSE" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF15R" altitude="3000.0F" heading="150" missedAltitude="10000.0F" lnav="FALSE" lnavvnav="FALSE" lpv="FALSE" lp="FALSE">
-      <ApproachLegs>
-        <Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="MPEPE" recommendedType="LOCALIZER" recommendedIdent="HOLD" theta="150" rho="10.0N" altitudeDescriptor="-" altitude1="6000.0F" />
-        <Leg type="TF" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF15R" flyOver="FALSE" recommendedType="LOCALIZER" recommendedIdent="HOLD" theta="150" rho="10.0N" magneticCourse="150" distance="10.0N" altitudeDescriptor="-" altitude1="3000.0F" />
-        <Leg type="TF" fixType="RUNWAY" fixRegion="LF" fixIdent="RW15R" flyOver="TRUE" recommendedType="LOCALIZER" recommendedIdent="HOLD" theta="150" rho="10.0N" magneticCourse="150" distance="10.0N" />
-      </ApproachLegs>
-      <Transition transitionType="FULL" fixType="WAYPOINT" fixRegion="LF" fixIdent="ZEBLO" altitude="11000.0F" name="">
-        <TransitionLegs>
-          <Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="ZEBLO" altitudeDescriptor="-" altitude1="11000.0F" />
-          <Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="MPEPE" flyOver="FALSE" altitudeDescriptor="-" altitude1="6000.0F" />
-        </TransitionLegs>
-      </Transition>
-      <Transition transitionType="FULL" fixType="WAYPOINT" fixRegion="LF" fixIdent="TWENT" altitude="10000.0F" name="">
-        <TransitionLegs>
-          <Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="TWENT" altitudeDescriptor="-" altitude1="10000.0F" />
-          <Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="MPEPE" flyOver="FALSE" altitudeDescriptor="-" altitude1="6000.0F" />
-        </TransitionLegs>
-      </Transition>
-    </Approach>
-  </Airport>
-  <Vor lat="50.1141357421875" lon="3.4898096323013306" alt="436.0F" type="HIGH" frequency="110.450" magvar="0" range="361237.0M" region="LF" ident="VOR00" name="SPO" nav="TRUE" dmeOnly="FALSE" dme="TRUE">
-    <Dme lat="50.1141357421875" lon="3.4898096323013306" alt="436.0F" range="361237.0M" />
-  </Vor>
-  <Vor lat="50.11573802679777" lon="3.4829333424568176" alt="433.0F" type="HIGH" frequency="110.550" magvar="0" range="361237.0M" region="LF" ident="VOR01" name="SPA" nav="TRUE" dmeOnly="FALSE" dme="TRUE">
-    <Dme lat="50.11573802679777" lon="3.4829333424568176" alt="433.0F" range="361237.0M" />
-  </Vor>
-  <Waypoint lon="2.7908331155776978" lat="50.40144357830286" waypointType="NAMED" waypointRegion="LF" waypointIdent="BENIC" magvar="0" />
-  <Waypoint lon="2.8191666305065155" lat="50.18833167850971" waypointType="NAMED" waypointRegion="LF" waypointIdent="ADIBO" magvar="0" />
-  <Waypoint lon="3.496944308280945" lat="50.545833595097065" waypointType="NAMED" waypointRegion="LF" waypointIdent="TWENT" magvar="0" />
-  <Waypoint lon="2.9694445431232452" lat="50.41972350329161" waypointType="NAMED" waypointRegion="LF" waypointIdent="ZEBLO" magvar="0" />
-  <Waypoint lon="3.2750000059604645" lat="50.40416702628136" waypointType="NAMED" waypointRegion="LF" waypointIdent="MPEPE" magvar="0" />
-  <Waypoint lon="3.6750000715255737" lat="50.34222040325403" waypointType="NAMED" waypointRegion="LF" waypointIdent="LYKII" magvar="0" />
-  <Waypoint lon="3.1480832397937775" lat="50.31252667307854" waypointType="NAMED" waypointRegion="LF" waypointIdent="CDVLL" magvar="0" />
-  <Waypoint lon="2.839999794960022" lat="49.91249833256006" waypointType="NAMED" waypointRegion="LF" waypointIdent="LUDOV" magvar="0" />
-  <Waypoint lon="3.033277541399002" lat="49.51480485498905" waypointType="NAMED" waypointRegion="LF" waypointIdent="KNAKI" magvar="0" />
-  <Waypoint lon="3.6830556392669678" lat="49.268611930310726" waypointType="NAMED" waypointRegion="LF" waypointIdent="DIDRL" magvar="0" />
-  <Waypoint lon="3.3180557191371918" lat="49.80833441019058" waypointType="NAMED" waypointRegion="LF" waypointIdent="YVOUN" magvar="0" />
-  <Waypoint lon="4.586666375398636" lat="50.006668008863926" waypointType="NAMED" waypointRegion="LF" waypointIdent="AZGAR" magvar="0" />
-  <Waypoint lon="3.7933333218097687" lat="50.35499945282936" waypointType="NAMED" waypointRegion="LF" waypointIdent="LUKYN" magvar="0" />
-  <Waypoint lon="4.093888700008392" lat="49.95861053466797" waypointType="NAMED" waypointRegion="LF" waypointIdent="MONFX" magvar="0" />
-  <Waypoint lon="3.7673918902873993" lat="49.81583420187235" waypointType="NAMED" waypointRegion="LF" waypointIdent="DITES" magvar="0" />
-  <Waypoint lon="4.0028612315654755" lat="49.5696372538805" waypointType="NAMED" waypointRegion="LF" waypointIdent="BENTR" magvar="0" />
-  <Waypoint lon="4.357500225305557" lat="49.59638960659504" waypointType="NAMED" waypointRegion="LF" waypointIdent="PYRAX" magvar="0" />
+<?xml version="1.0"?>
+<FSData version="9.0">
+<Airport region="Europe" country="France" city="Le Cateau-Cambrésis" name="Supreme Leader Airport" ident="AZGA" lat="50.10380802242380" lon="3.50687499818232" alt="138.14058760832995" magvar="0.000000" airportTestRadius="2216.54317728604792" applyFlatten="TRUE" isOnTIN="FALSE">
+<Approach type="ILS" runway="33" designator="R" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF33R" altitude="3000.0F" heading="330.00000000000000" missedAltitude="10000.0F">
+	<ApproachLegs>
+        <Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="DITES" recommendedType="LOCALIZER" recommendedRegion="LF" recommendedIdent="VINC" theta="326" rho="10N" altitudeDescriptor="-" altitude1="6000.0F"/>
+		<Leg type="TF" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF33R" flyOver="FALSE" recommendedType="LOCALIZER" recommendedRegion="LF" recommendedIdent="VINC" theta="330" rho="10N" magneticCourse="330" distance="10N" altitudeDescriptor="-" altitude1="3000.0F"/>
+        <Leg type="TF" fixType="RUNWAY" fixRegion="LF" fixIdent="RW33R" flyOver="TRUE" recommendedType="LOCALIZER" recommendedRegion="LF" recommendedIdent="VINC" magneticCourse="330.0"/>
+    </ApproachLegs>
+	<Transition transitionType="FULL" fixType="WAYPOINT" fixRegion="LF" fixIdent="PYRAX" altitude="16000.0F">
+		<TransitionLegs>
+			<Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="PYRAX" altitudeDescriptor="-" altitude1="16000.0F"/>
+			<Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="BENTR" flyOver="FALSE" magneticCourse="0.0" altitudeDescriptor="-" altitude1="12000.0F"/>
+			<Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="DITES" flyOver="FALSE" magneticCourse="0.0" altitudeDescriptor="-" altitude1="6000.0F"/>
+		</TransitionLegs>
+	</Transition>
+	<Transition transitionType="FULL" fixType="WAYPOINT" fixRegion="LF" fixIdent="DIDRL" altitude="18000.0F">
+		<TransitionLegs>
+			<Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="DIDRL" altitudeDescriptor="-" altitude1="18000.0F"/>
+			<Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="BENTR" flyOver="FALSE" magneticCourse="0.0" altitudeDescriptor="-" altitude1="12000.0F"/>
+			<Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="DITES" flyOver="FALSE" magneticCourse="0.0" altitudeDescriptor="-" altitude1="6000.0F"/>
+		</TransitionLegs>
+	</Transition>
+</Approach>
+<Approach type="ILS" runway="33" designator="L" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF33L" altitude="3000.0F" heading="330.00000000000000" missedAltitude="10000.0F">
+	<ApproachLegs>
+        <Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="DITES" recommendedType="LOCALIZER" recommendedRegion="LF" recommendedIdent="VINC" theta="326" rho="10N" altitudeDescriptor="-" altitude1="6000.0F"/>
+		<Leg type="TF" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF33L" flyOver="FALSE" recommendedType="LOCALIZER" recommendedRegion="LF" recommendedIdent="COLC" theta="330" rho="10N" magneticCourse="330" distance="10N" altitudeDescriptor="-" altitude1="3000.0F"/>
+        <Leg type="TF" fixType="RUNWAY" fixRegion="LF" fixIdent="RW33L" flyOver="TRUE" recommendedType="LOCALIZER" recommendedRegion="LF" recommendedIdent="COLC" theta="330" rho="10N" magneticCourse="330" distance="10N"/>
+    </ApproachLegs>
+	<Transition transitionType="FULL" fixType="WAYPOINT" fixRegion="LF" fixIdent="PYRAX" altitude="16000.0F">
+		<TransitionLegs>
+			<Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="PYRAX" altitudeDescriptor="-" altitude1="16000.0F"/>
+			<Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="BENTR" flyOver="FALSE" magneticCourse="0.0" altitudeDescriptor="-" altitude1="12000.0F"/>
+			<Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="DITES" flyOver="FALSE" magneticCourse="0.0" altitudeDescriptor="-" altitude1="6000.0F"/>
+		</TransitionLegs>
+	</Transition>
+	<Transition transitionType="FULL" fixType="WAYPOINT" fixRegion="LF" fixIdent="DIDRL" altitude="18000.0F">
+		<TransitionLegs>
+			<Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="DIDRL" altitudeDescriptor="-" altitude1="18000.0F"/>
+			<Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="BENTR" flyOver="FALSE" magneticCourse="0.0" altitudeDescriptor="-" altitude1="12000.0F"/>
+			<Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="DITES" flyOver="FALSE" magneticCourse="0.0" altitudeDescriptor="-" altitude1="6000.0F"/>
+		</TransitionLegs>
+	</Transition>
+</Approach>
+<Approach type="ILS" runway="15" designator="L" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF15L" altitude="3000.0F" heading="150.00000000000000" missedAltitude="10000.0F">
+	<ApproachLegs>
+        <Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="MPEPE" recommendedType="LOCALIZER" recommendedRegion="LF" recommendedIdent="DAMO" theta="160" rho="10N" altitudeDescriptor="-" altitude1="6000.0F"/>
+        <Leg type="TF" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF15L" flyOver="FALSE" recommendedType="LOCALIZER" recommendedRegion="LF" recommendedIdent="DAMO" theta="150" rho="10N" magneticCourse="160" distance="10N" altitudeDescriptor="-" altitude1="3000.0F"/>
+        <Leg type="TF" fixType="RUNWAY" fixRegion="LF" fixIdent="RW15L" flyOver="TRUE" recommendedType="LOCALIZER" recommendedRegion="LF" recommendedIdent="DAMO" theta="150" rho="10N" magneticCourse="150" distance="10N"/>
+    </ApproachLegs>
+	<Transition transitionType="FULL" fixType="WAYPOINT" fixRegion="LF" fixIdent="ZEBLO" altitude="11000.0F">
+		<TransitionLegs>
+			<Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="ZEBLO" altitudeDescriptor="-" altitude1="11000.0F"/>
+			<Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="MPEPE" flyOver="FALSE" magneticCourse="0.0" altitudeDescriptor="-" altitude1="6000.0F"/>
+		</TransitionLegs>
+	</Transition>
+	<Transition transitionType="FULL" fixType="WAYPOINT" fixRegion="LF" fixIdent="TWENT" altitude="10000.0F">
+		<TransitionLegs>
+			<Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="TWENT" altitudeDescriptor="-" altitude1="10000.0F"/>
+			<Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="MPEPE" flyOver="FALSE" magneticCourse="0.0" altitudeDescriptor="-" altitude1="6000.0F"/>
+		</TransitionLegs>
+	</Transition>
+</Approach>
+<Approach type="ILS" runway="15" designator="R" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF15R" altitude="3000.0F" heading="150.00000000000000" missedAltitude="10000.0F">
+	<ApproachLegs>
+        <Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="MPEPE" recommendedType="LOCALIZER" recommendedRegion="LF" recommendedIdent="HOLD" theta="150" rho="10N" altitudeDescriptor="-" altitude1="6000.0F"/>
+		<Leg type="TF" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF15R" flyOver="FALSE" recommendedType="LOCALIZER" recommendedRegion="LF" recommendedIdent="HOLD" theta="150" rho="10N" magneticCourse="150" distance="10N" altitudeDescriptor="-" altitude1="3000.0F"/>
+        <Leg type="TF" fixType="RUNWAY" fixRegion="LF" fixIdent="RW15R" flyOver="TRUE" recommendedType="LOCALIZER" recommendedRegion="LF" recommendedIdent="HOLD" theta="150" rho="10N" magneticCourse="150" distance="10N"/>
+    </ApproachLegs>
+	<Transition transitionType="FULL" fixType="WAYPOINT" fixRegion="LF" fixIdent="ZEBLO" altitude="11000.0F">
+		<TransitionLegs>
+			<Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="ZEBLO" altitudeDescriptor="-" altitude1="11000.0F"/>
+			<Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="MPEPE" flyOver="FALSE" magneticCourse="0.0" altitudeDescriptor="-" altitude1="6000.0F"/>
+		</TransitionLegs>
+	</Transition>
+	<Transition transitionType="FULL" fixType="WAYPOINT" fixRegion="LF" fixIdent="TWENT" altitude="10000.0F">
+		<TransitionLegs>
+			<Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="TWENT" altitudeDescriptor="-" altitude1="10000.0F"/>
+			<Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="MPEPE" flyOver="FALSE" magneticCourse="0.0" altitudeDescriptor="-" altitude1="6000.0F"/>
+		</TransitionLegs>
+	</Transition>
+</Approach>
+<Departure name="EMMAN3">
+	<RunwayTransitions>
+		<RunwayTransitionLegs number="33" designator="L">
+		<Leg type="CF" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF15R" flyOver="TRUE" recommendedType="RUNWAY" recommendedRegion="LF" recommendedIdent="RW33L" theta="330" rho="10N" magneticCourse="330.0" distance="10N" altitudeDescriptor="+" altitude1="6000.0F"/>
+		<Leg type="DF" fixType="WAYPOINT" fixRegion="LF" fixIdent="CDVLL" flyOver="FALSE" turnDirection="L" altitudeDescriptor="+" altitude1="12000.0F"/>
+		</RunwayTransitionLegs>
+		<RunwayTransitionLegs number="33" designator="R">
+		<Leg type="CF" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF15L" flyOver="TRUE" recommendedType="RUNWAY" recommendedRegion="LF" recommendedIdent="RW33R" theta="330" rho="10N" magneticCourse="330.0" distance="10N" altitudeDescriptor="+" altitude1="6000.0F"/>
+		<Leg type="DF" fixType="WAYPOINT" fixRegion="LF" fixIdent="CDVLL" flyOver="FALSE" turnDirection="L" altitudeDescriptor="+" altitude1="12000.0F"/>
+		</RunwayTransitionLegs>
+	</RunwayTransitions>
+   <CommonRouteLegs>
+		<Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="CDVLL" altitudeDescriptor="+" altitude1="12000.0F"/>
+		<Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="BENIC"  magneticCourse="0.0" altitudeDescriptor="+" altitude1="20000.0F"/>
+	</CommonRouteLegs>
+	<EnrouteTransitions/>
+</Departure>
+<Departure name="VALOU3">
+	<RunwayTransitions>
+		<RunwayTransitionLegs number="33" designator="L">
+		<Leg type="CF" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF15R" flyOver="TRUE" recommendedType="RUNWAY" recommendedRegion="LF" recommendedIdent="RW33L" theta="330" rho="10N" magneticCourse="330.0" distance="10N" altitudeDescriptor="+" altitude1="6000.0F"/>
+		<Leg type="DF" fixType="WAYPOINT" fixRegion="LF" fixIdent="LYKII" flyOver="FALSE" turnDirection="R" altitudeDescriptor="+" altitude1="15000.0F"/>
+		</RunwayTransitionLegs>
+		<RunwayTransitionLegs number="33" designator="R">
+		<Leg type="CF" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF15L" flyOver="TRUE" recommendedType="RUNWAY" recommendedRegion="LF" recommendedIdent="RW33R" theta="330" rho="10N" magneticCourse="330.0" distance="10N" altitudeDescriptor="+" altitude1="6000.0F"/>
+		<Leg type="DF" fixType="WAYPOINT" fixRegion="LF" fixIdent="LYKII" flyOver="FALSE" turnDirection="R" altitudeDescriptor="+" altitude1="15000.0F"/>
+		</RunwayTransitionLegs>
+	</RunwayTransitions>
+   <CommonRouteLegs/>
+	<EnrouteTransitions/>
+</Departure>
+<Departure name="AYMER1">
+	<RunwayTransitions>
+		<RunwayTransitionLegs number="15" designator="L">
+		<Leg type="CF" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF33R" flyOver="TRUE" recommendedType="RUNWAY" recommendedRegion="LF" recommendedIdent="RW15L" theta="150" rho="10N" magneticCourse="150.0" distance="10N" altitudeDescriptor="+" altitude1="6000.0F"/>
+		<Leg type="DF" fixType="WAYPOINT" fixRegion="LF" fixIdent="YVOUN" flyOver="FALSE" turnDirection="R" altitudeDescriptor="+" altitude1="15000.0F"/>
+		</RunwayTransitionLegs>
+		<RunwayTransitionLegs number="15" designator="R">
+		<Leg type="CF" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF33L" flyOver="TRUE" recommendedType="RUNWAY" recommendedRegion="LF" recommendedIdent="RW15R" theta="150" rho="10N" magneticCourse="150.0" distance="10N" altitudeDescriptor="+" altitude1="6000.0F"/>
+		<Leg type="DF" fixType="WAYPOINT" fixRegion="LF" fixIdent="YVOUN" flyOver="FALSE" turnDirection="R" altitudeDescriptor="+" altitude1="15000.0F"/>
+		</RunwayTransitionLegs>
+	</RunwayTransitions>
+    <CommonRouteLegs/>	
+	<EnrouteTransitions/>
+</Departure>
+<Departure name="WHEEL1">
+	<RunwayTransitions>
+		<RunwayTransitionLegs number="15" designator="L">
+		<Leg type="CF" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF33R" flyOver="TRUE" recommendedType="RUNWAY" recommendedRegion="LF" recommendedIdent="RW15L" theta="150" rho="10N" magneticCourse="150.0" distance="10N" altitudeDescriptor="+" altitude1="6000.0F"/>
+		<Leg type="DF" fixType="WAYPOINT" fixRegion="LF" fixIdent="MONFX" flyOver="FALSE" turnDirection="L" altitudeDescriptor="+" altitude1="15000.0F"/>
+		</RunwayTransitionLegs>
+		<RunwayTransitionLegs number="15" designator="R">
+		<Leg type="CF" fixType="TERMINAL_WAYPOINT" fixRegion="LF" fixIdent="IF33L" flyOver="TRUE" recommendedType="RUNWAY" recommendedRegion="LF" recommendedIdent="RW15R" theta="150" rho="10N" magneticCourse="150.0" distance="10N" altitudeDescriptor="+" altitude1="6000.0F"/>
+		<Leg type="DF" fixType="WAYPOINT" fixRegion="LF" fixIdent="MONFX" flyOver="FALSE" turnDirection="L" altitudeDescriptor="+" altitude1="15000.0F"/>
+		</RunwayTransitionLegs>
+	</RunwayTransitions>
+	<CommonRouteLegs/>
+	<EnrouteTransitions/>
+</Departure>
+<Arrival name="MEGAN1">
+	<EnrouteTransitions/>
+	<CommonRouteLegs>
+			<Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="LUDOV" altitudeDescriptor="-" altitude1="20000.0F"/>
+			<Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="ADIBO" flyOver="FALSE" magneticCourse="0.0" altitudeDescriptor="-" altitude1="15000.0F"/>
+			<Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="ZEBLO" flyOver="FALSE" magneticCourse="0.0" altitudeDescriptor="-" altitude1="11000.0F"/>
+	</CommonRouteLegs>
+	<RunwayTransitions/>
+</Arrival>
+<Arrival name="NATHA3">
+	<EnrouteTransitions/>
+	<CommonRouteLegs>
+			<Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="LUDOV" altitudeDescriptor="-" altitude1="30000.0F"/>
+			<Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="KNAKI" flyOver="FALSE" magneticCourse="0.0" altitudeDescriptor="-" altitude1="25000.0F"/>
+			<Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="DIDRL" flyOver="FALSE" magneticCourse="0.0" altitudeDescriptor="-" altitude1="18000.0F"/>
+	</CommonRouteLegs>
+	<RunwayTransitions/>
+</Arrival>
+<Arrival name="SYLVR1">
+	<EnrouteTransitions/>
+	<CommonRouteLegs>
+		<Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="AZGAR" altitudeDescriptor="-" altitude1="26000.0F"/>
+		<Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="LUKYN" flyOver="FALSE" magneticCourse="0.0" altitudeDescriptor="-" altitude1="15000.0F"/>
+		<Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="TWENT" flyOver="FALSE" magneticCourse="0.0" altitudeDescriptor="-" altitude1="10000.0F"/>
+	</CommonRouteLegs>
+	<RunwayTransitions/>
+</Arrival>
+<Arrival name="ELLIO3">
+	<EnrouteTransitions/>
+	<CommonRouteLegs>
+			<Leg type="IF" fixType="WAYPOINT" fixRegion="LF" fixIdent="AZGAR" altitudeDescriptor="-" altitude1="24000.0F"/>
+			<Leg type="TF" fixType="WAYPOINT" fixRegion="LF" fixIdent="PYRAX" flyOver="FALSE" magneticCourse="0.0" altitudeDescriptor="-" altitude1="16000.0F"/>
+	</CommonRouteLegs>
+	<RunwayTransitions/>
+</Arrival>
+<Waypoint lon="3.63186693" lat="49.95584106" magvar="0.0" waypointType="NAMED" waypointRegion="LF" waypointIdent="IF33R"/>
+<Waypoint lon="3.3674612" lat="50.24956131" magvar="0.0" waypointType="NAMED" waypointRegion="LF" waypointIdent="IF15L"/>
+<Waypoint lon="3.63339162" lat="49.94805908" magvar="0.0" waypointType="NAMED" waypointRegion="LF" waypointIdent="IF33L"/>
+<Waypoint lon="3.36181664" lat="50.24981689" magvar="0.0" waypointType="NAMED" waypointRegion="LF" waypointIdent="IF15R"/>
+</Airport>
+<Waypoint lon="3.76739192" lat="49.81583405" magvar="0.0" waypointType="NAMED" waypointRegion="LF" waypointIdent="DITES"/>
+<Waypoint lon="4.58666658" lat="50.00666809" magvar="0.0" waypointType="NAMED" waypointRegion="LF" waypointIdent="AZGAR"/>
+<Waypoint lon="2.83999991" lat="49.91249847" magvar="0.0" waypointType="NAMED" waypointRegion="LF" waypointIdent="LUDOV"/>
+<Waypoint lon="3.03327775" lat="49.51480484" magvar="0.0" waypointType="NAMED" waypointRegion="LF" waypointIdent="KNAKI"/>
+<Waypoint lon="3.68305564" lat="49.26861191" magvar="0.0" waypointType="NAMED" waypointRegion="LF" waypointIdent="DIDRL"/>
+<Waypoint lon="4.00286102" lat="49.5696373" magvar="0.0" waypointType="NAMED" waypointRegion="LF" waypointIdent="BENTR"/>
+<Waypoint lon="4.35750008" lat="49.59638977" magvar="0.0" waypointType="NAMED" waypointRegion="LF" waypointIdent="PYRAX"/>
+<Waypoint lon="3.79333329" lat="50.35499954" magvar="0.0" waypointType="NAMED" waypointRegion="LF" waypointIdent="LUKYN"/>
+<Waypoint lon="2.81916666" lat="50.1883316" magvar="0.0" waypointType="NAMED" waypointRegion="LF" waypointIdent="ADIBO"/>
+<Waypoint lon="3.49694443" lat="50.54583359" magvar="0.0" waypointType="NAMED" waypointRegion="LF" waypointIdent="TWENT"/>
+<Waypoint lon="2.96944451" lat="50.41972351" magvar="0.0" waypointType="NAMED" waypointRegion="LF" waypointIdent="ZEBLO"/>
+<Waypoint lon="3.2750001" lat="50.40416718" magvar="0.0" waypointType="NAMED" waypointRegion="LF" waypointIdent="MPEPE"/>
+<Waypoint lon="2.79083323" lat="50.40144348" magvar="0.0" waypointType="NAMED" waypointRegion="LF" waypointIdent="BENIC"/>
+<Waypoint lon="3.31805563" lat="49.80833435" magvar="0.0" waypointType="NAMED" waypointRegion="LF" waypointIdent="YVOUN"/>
+<Waypoint lon="4.09388876" lat="49.95861053" magvar="0.0" waypointType="NAMED" waypointRegion="LF" waypointIdent="MONFX"/>
+<Waypoint lon="3.67499995" lat="50.34222031" magvar="0.0" waypointType="NAMED" waypointRegion="LF" waypointIdent="LYKII"/>
+<Waypoint lon="3.14808321" lat="50.3125267" magvar="0.0" waypointType="NAMED" waypointRegion="LF" waypointIdent="CDVLL"/>
+
+
+<Vor lat="50.114135740000000" lon="3.489809750000000"  alt="436.0F" type="HIGH" frequency="110.45" magvar="0.0" region="LF" ident="VOR00" name="SPO" nav="TRUE" dmeOnly="FALSE" dme="TRUE"/>
+<Vor lat="50.115737920000000" lon="3.482933280000000"  alt="433.0F" type="HIGH" frequency="110.55" magvar="0.0" region="LF" ident="VOR01" name="SPA" nav="TRUE" dmeOnly="FALSE" dme="TRUE"/>
 </FSData>
