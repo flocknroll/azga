@@ -12,8 +12,7 @@ L'Azgharie :relaxed:
 https://www.azgharie.net/
 
 # TODO
-- [ ] configuration auto de la fréquence ILS
-- [ ] vérifier les GS + altitude ILS
+- [ ] vérifier les GS
 - [ ] documenter les colonnes par fichier
 - [ ] script d'installation -> intégrer dans un mod ?
-- [ ] paramétrer les valeurs avec templates -> coordonnées, azimuts, alts, fréquences, etc. 
+- [ ] réxupérer les valeurs depuis XML et créer un template 
