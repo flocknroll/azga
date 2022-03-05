@@ -12,7 +12,6 @@ L'Azgharie :relaxed:
 https://www.azgharie.net/
 
 # TODO
-- [ ] vérifier les GS
 - [ ] documenter les colonnes par fichier
 - [ ] script d'installation -> intégrer dans un mod ?
-- [ ] réxupérer les valeurs depuis XML et créer un template 
+- [ ] récupérer les valeurs depuis XML et créer un template 

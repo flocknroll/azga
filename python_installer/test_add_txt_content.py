@@ -35,11 +35,9 @@ def test_check_content_not_found():
 
 
 def test_add_content(tmp_path):
-    src = str(tmp_path / "src.txt")
     dest = str(tmp_path / "dest.txt")
-    _copy_file("test_data/src_not_found.txt", src)
     _copy_file("test_data/dest.txt", dest)
 
-    add_content(src, dest)
+    add_content("test_data/src_not_found.txt", dest)
 
     assert _compare_files(dest, "test_data/result.txt")
