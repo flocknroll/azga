@@ -1,0 +1,19 @@
+{
+    "Config": [
+        {
+            "SourceType": "local",
+            "SourcePath": "../Airports_v2.txt",
+            "DestPath": "Community/aerosoft-crj/Data/NavData/Airports.txt"
+        },
+        {
+            "SourceType": "local",
+            "SourcePath": "../Navaids.txt",
+            "DestPath": "Community/aerosoft-crj/Data/NavData/Navaids.txt"
+        },
+        {
+            "SourceType": "local",
+            "SourcePath": "../Waypoints.txt",
+            "DestPath": "Community/aerosoft-crj/Data/NavData/Waypoints.txt"
+        }
+    ]
+}
