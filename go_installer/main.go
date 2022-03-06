@@ -17,6 +17,7 @@ type SourceType string
 const (
 	Local SourceType = "local"
 	Git   SourceType = "git"
+	Http  SourceType = "http"
 )
 
 type InstallerConfig struct {
@@ -27,6 +28,7 @@ type ConfigEntry struct {
 	SourceType SourceType
 	SourcePath string
 	DestPath   string
+	CreateFile bool
 }
 
 func main() {
@@ -50,19 +52,37 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// TODO: handle create file
 	for _, ce := range config.Config {
 		switch ce.SourceType {
 		case Local:
 			dest := filepath.Join(msfsPath, ce.DestPath)
-			log.Printf("Checking %s -> %s\n", ce.SourcePath, dest)
-			addtxtcontentgo.AddContent(ce.SourcePath, dest)
-		case Git:
+
+			if ce.CreateFile {
+				log.Printf("Copying %s -> %s\n", ce.SourcePath, dest)
+				utils.CopyFile(ce.SourcePath, dest)
+			} else {
+				log.Printf("Checking %s -> %s\n", ce.SourcePath, dest)
+				addtxtcontentgo.AddContent(ce.SourcePath, dest)
+			}
+
+		case Http:
 			tmpFilePath := utils.DownloadContent(ce.SourcePath)
 			defer os.Remove(tmpFilePath)
 
 			dest := filepath.Join(msfsPath, ce.DestPath)
-			log.Printf("Checking %s -> %s\n", ce.SourcePath, dest)
-			addtxtcontentgo.AddContent(tmpFilePath, dest)
+
+			if ce.CreateFile {
+				log.Printf("Copying %s -> %s\n", ce.SourcePath, dest)
+				utils.CopyFile(tmpFilePath, dest)
+			} else {
+				log.Printf("Checking %s -> %s\n", ce.SourcePath, dest)
+				addtxtcontentgo.AddContent(tmpFilePath, dest)
+			}
+
+		case Git:
+			panic("Not implemented")
+
 		default:
 			log.Fatal("Invalid source type")
 		}

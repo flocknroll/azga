@@ -1,19 +1,25 @@
 {
     "Config": [
         {
-            "SourceType": "git",
+            "SourceType": "http",
             "SourcePath": "https://raw.githubusercontent.com/flocknroll/azga/main/Navaids.txt",
             "DestPath": "Community/aerosoft-crj/Data/NavData/Navaids.txt"
         },
         {
-            "SourceType": "git",
+            "SourceType": "http",
             "SourcePath": "https://raw.githubusercontent.com/flocknroll/azga/main/Waypoints.txt",
             "DestPath": "Community/aerosoft-crj/Data/NavData/Waypoints.txt"
         },
         {
-            "SourceType": "git",
+            "SourceType": "http",
             "SourcePath": "https://raw.githubusercontent.com/flocknroll/azga/main/Airports_v2.txt",
             "DestPath": "Community/aerosoft-crj/Data/NavData/Airports.txt"
+        },
+        {
+            "SourceType": "http",
+            "SourcePath": "https://raw.githubusercontent.com/flocknroll/azga/main/Proc/AZGA.txt",
+            "DestPath": "Community/aerosoft-crj/Data/NavData/Proc/AZGA.txt",
+            "CreateFile": true
         }
     ]
 }

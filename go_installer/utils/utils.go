@@ -72,3 +72,22 @@ func DownloadContent(url string) string {
 
 	return tmpFile.Name()
 }
+
+// Copy a file, destination will be overwritten
+func CopyFile(srcPath string, destPath string) {
+	src, err := os.OpenFile(srcPath, os.O_RDONLY, 0)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer src.Close()
+	dest, err := os.Create(destPath)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer dest.Close()
+
+	_, err = io.Copy(dest, src)
+	if err != nil {
+		log.Fatal(err)
+	}
+}
