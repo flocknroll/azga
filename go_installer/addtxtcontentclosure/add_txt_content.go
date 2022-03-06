@@ -1,9 +1,9 @@
-package add_txt_content_closure
+package addtxtcontentclosure
 
 import (
 	"bufio"
 	"bytes"
-	"fmt"
+	"log"
 	"os"
 
 	"github.com/flocknroll/azga/go_installer/utils"
@@ -43,10 +43,10 @@ func genRollingHashFile(path string, linesNb int) func() (bool, []byte) {
 }
 
 // Checks if the source file content if present in the destination file.
-func checkContent(src_path string, dest_path string) bool {
-	linesNb, srcHash := utils.HashLines(utils.ReadEntireFile(src_path))
+func checkContent(srcPath string, destPath string) bool {
+	linesNb, srcHash := utils.HashLines(utils.ReadEntireFile(srcPath))
 
-	rollingHashFile := genRollingHashFile(dest_path, linesNb)
+	rollingHashFile := genRollingHashFile(destPath, linesNb)
 
 	for ok, destHash := rollingHashFile(); ok; ok, destHash = rollingHashFile() {
 		if destHash != nil && bytes.Equal(srcHash, destHash) {
@@ -58,15 +58,15 @@ func checkContent(src_path string, dest_path string) bool {
 }
 
 // Add the content of the source file at the end of the destination file if not already present.
-func AddContent(src_path string, dest_path string) {
-	found := checkContent(src_path, dest_path)
+func AddContent(srcPath string, destPath string) {
+	found := checkContent(srcPath, destPath)
 
 	if found {
-		fmt.Println("Data found")
+		log.Printf("Data found in %s\n", destPath)
 	} else {
-		fmt.Println("Data not found - appending")
-		src := utils.ReadEntireFile(src_path)
-		f, err := os.OpenFile(dest_path, os.O_APPEND|os.O_WRONLY, os.ModeAppend)
+		log.Printf("Data not found in %s - appending %s", destPath, srcPath)
+		src := utils.ReadEntireFile(srcPath)
+		f, err := os.OpenFile(destPath, os.O_APPEND|os.O_WRONLY, os.ModeAppend)
 		if err == nil {
 			defer f.Close()
 		} else {

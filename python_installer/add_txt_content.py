@@ -43,29 +43,29 @@ def rolling_hash_file(path: str, lines_nb: int) -> Iterable[bytes]:
                 yield hash
 
 
-def check_content(src_path: str, dest_path: str) -> bool:
+def check_content(srcPath: str, destPath: str) -> bool:
     """
     Checks if the source file content if present in the destination file.
     """
-    lines_nb, src_hash = hash_lines(read_entire_file(src_path))
+    lines_nb, src_hash = hash_lines(read_entire_file(srcPath))
 
-    for dest_hash in rolling_hash_file(dest_path, lines_nb):
+    for dest_hash in rolling_hash_file(destPath, lines_nb):
         if src_hash == dest_hash:
             return True
 
     return False
 
 
-def add_content(src_path: str, dest_path: str) -> None:
+def add_content(srcPath: str, destPath: str) -> None:
     """
     Add the content of the source file at the end of the destination file if not already present.
     """
-    found = check_content(src_path, dest_path)
+    found = check_content(srcPath, destPath)
 
     if not found:
         print("Data not found - appending")
-        src = read_entire_file(src_path)
-        with open(dest_path, "at") as f:
+        src = read_entire_file(srcPath)
+        with open(destPath, "at") as f:
             f.write("\n")
             f.writelines(src)
     else:

@@ -34,8 +34,8 @@ def test_check_content_not_found():
     assert not found
 
 
-def test_add_content(tmp_path):
-    dest = str(tmp_path / "dest.txt")
+def test_add_content(tmpPath):
+    dest = str(tmpPath / "dest.txt")
     _copy_file("test_data/dest.txt", dest)
 
     add_content("test_data/src_not_found.txt", dest)
