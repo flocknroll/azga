@@ -3,45 +3,11 @@ package add_txt_content_closure
 import (
 	"bufio"
 	"bytes"
-	"crypto/md5"
 	"fmt"
-	"io"
 	"os"
+
+	"github.com/flocknroll/azga/go_installer/utils"
 )
-
-// Returns a MD5 digest of the lines.
-// Strips the new line character if present.
-func hashLines(lines []string) (int, []byte) {
-	nb := 0
-	md5 := md5.New()
-
-	for ix, line := range lines {
-		io.WriteString(md5, line)
-		nb = ix + 1
-	}
-
-	return nb, md5.Sum(nil)
-}
-
-// Reads all the lines from a file.
-func readEntireFile(path string) []string {
-	f, err := os.OpenFile(path, os.O_RDONLY, 0)
-	if err == nil {
-		defer f.Close()
-	} else {
-		panic(err)
-	}
-
-	result := make([]string, 0)
-
-	scanner := bufio.NewScanner(f)
-	for scanner.Scan() {
-		line := scanner.Text()
-		result = append(result, line)
-	}
-
-	return result
-}
 
 // Iterate through a file and returns the MD5 digests of the lines grouped by the specified number.
 func genRollingHashFile(path string, linesNb int) func() (bool, []byte) {
@@ -62,7 +28,7 @@ func genRollingHashFile(path string, linesNb int) func() (bool, []byte) {
 			}
 
 			if len(lines) == linesNb {
-				_, hash := hashLines(lines)
+				_, hash := utils.HashLines(lines)
 				return true, hash
 			} else {
 				return true, nil
@@ -78,7 +44,7 @@ func genRollingHashFile(path string, linesNb int) func() (bool, []byte) {
 
 // Checks if the source file content if present in the destination file.
 func checkContent(src_path string, dest_path string) bool {
-	linesNb, srcHash := hashLines(readEntireFile(src_path))
+	linesNb, srcHash := utils.HashLines(utils.ReadEntireFile(src_path))
 
 	rollingHashFile := genRollingHashFile(dest_path, linesNb)
 
@@ -99,7 +65,7 @@ func AddContent(src_path string, dest_path string) {
 		fmt.Println("Data found")
 	} else {
 		fmt.Println("Data not found - appending")
-		src := readEntireFile(src_path)
+		src := utils.ReadEntireFile(src_path)
 		f, err := os.OpenFile(dest_path, os.O_APPEND|os.O_WRONLY, os.ModeAppend)
 		if err == nil {
 			defer f.Close()
