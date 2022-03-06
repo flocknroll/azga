@@ -30,7 +30,7 @@ func GetPackageFolderPath() (string, bool) {
 	for line, err := reader.ReadString('\n'); err == nil; line, err = reader.ReadString('\n') {
 		if strings.HasPrefix(line, "InstalledPackagesPath") {
 			parts := strings.SplitN(line, " ", 2)
-			pkgPath = parts[1][1 : len(parts[1])-1] // We remove double quotes around the path
+			pkgPath = parts[1][1 : len(parts[1])-2] // We remove double quotes around the path
 			found = true
 			break
 		}
