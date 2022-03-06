@@ -13,7 +13,9 @@ func main() {
 	// fmt.Println(checkContent("test_data/src_not_found.txt", "test_data/dest.txt"))
 
 	var filesList = map[string]string{
-		"Airports.txt": "Community/aerosoft-crj/Data/NavData/Airports.txt",
+		"Airports_v2.txt": "Community/aerosoft-crj/Data/NavData/Airports.txt",
+		"Navaids.txt":     "Community/aerosoft-crj/Data/NavData/Navaids.txt",
+		"Waypoints.txt":   "Community/aerosoft-crj/Data/NavData/Waypoints.txt",
 	}
 
 	msfsPath, ok := msfstools.GetPackageFolderPath()
