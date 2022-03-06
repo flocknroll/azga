@@ -35,19 +35,24 @@ type ConfigEntry struct {
 func main() {
 	// fmt.Println(checkContent("test_data/src_found.txt", "test_data/dest.txt"))
 	// fmt.Println(checkContent("test_data/src_not_found.txt", "test_data/dest.txt"))
-	msfsPath, ok := msfstools.GetPackageFolderPath()
-
-	if !ok {
-		log.Fatal("MSFS package folder not found")
-		return
-	}
 
 	// Configuration
 	var config InstallerConfig
-	var configPath string
+	var configPath, msfsPath string
 
 	flag.StringVar(&configPath, "config", "config.json", "Path to the JSON config file")
+	flag.StringVar(&msfsPath, "package-path", "", "Path to the MSFS package folder")
 	flag.Parse()
+
+	if msfsPath == "" {
+		path, ok := msfstools.GetPackageFolderPath()
+
+		if !ok {
+			log.Fatal("MSFS package folder not found")
+		} else {
+			msfsPath = path
+		}
+	}
 
 	data, err := ioutil.ReadFile(configPath)
 	if err != nil {
