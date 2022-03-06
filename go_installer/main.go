@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"flag"
 	"io/ioutil"
 	"log"
 	"os"
@@ -41,9 +42,14 @@ func main() {
 		return
 	}
 
+	// Configuration
 	var config InstallerConfig
+	var configPath string
 
-	data, err := ioutil.ReadFile("config.json")
+	flag.StringVar(&configPath, "config", "config.json", "Path to the JSON config file")
+	flag.Parse()
+
+	data, err := ioutil.ReadFile(configPath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -52,7 +58,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// TODO: handle create file
+	// Installation
 	for _, ce := range config.Config {
 		switch ce.SourceType {
 		case Local:
