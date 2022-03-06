@@ -17,7 +17,7 @@ func GetPackageFolderPath() (string, bool) {
 	msfsOptsPath := filepath.Join(appDataPath, "Microsoft Flight Simulator", "UserCfg.opt")
 
 	f, err := os.OpenFile(msfsOptsPath, os.O_RDONLY, 0)
-	if err != nil {
+	if err == nil {
 		defer f.Close()
 	} else {
 		panic(err)
