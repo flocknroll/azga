@@ -2,6 +2,7 @@ package msfstools
 
 import (
 	"bufio"
+	"log"
 	"os"
 	"path/filepath"
 	"strings"
@@ -20,7 +21,7 @@ func GetPackageFolderPath() (string, bool) {
 	if err == nil {
 		defer f.Close()
 	} else {
-		panic(err)
+		log.Fatal(err)
 	}
 
 	reader := bufio.NewReader(f)

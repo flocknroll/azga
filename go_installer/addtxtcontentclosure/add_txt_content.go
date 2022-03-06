@@ -13,7 +13,7 @@ import (
 func genRollingHashFile(path string, linesNb int) func() (bool, []byte) {
 	f, err := os.OpenFile(path, os.O_RDONLY, 0)
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 	lines := make([]string, linesNb)
 	scanner := bufio.NewScanner(f)
@@ -70,13 +70,13 @@ func AddContent(srcPath string, destPath string) {
 		if err == nil {
 			defer f.Close()
 		} else {
-			panic(err)
+			log.Fatal(err)
 		}
 
 		for _, line := range src {
 			_, err = f.WriteString("\n" + line)
 			if err != nil {
-				panic(err)
+				log.Fatal(err)
 			}
 		}
 	}

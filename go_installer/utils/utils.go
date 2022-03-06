@@ -4,6 +4,9 @@ import (
 	"bufio"
 	"crypto/md5"
 	"io"
+	"io/ioutil"
+	"log"
+	"net/http"
 	"os"
 )
 
@@ -27,7 +30,7 @@ func ReadEntireFile(path string) []string {
 	if err == nil {
 		defer f.Close()
 	} else {
-		panic(err)
+		log.Fatal(err)
 	}
 
 	result := make([]string, 0)
@@ -39,4 +42,33 @@ func ReadEntireFile(path string) []string {
 	}
 
 	return result
+}
+
+// Copy the remote content into a temporary file
+func DownloadContent(url string) string {
+	tmpFile, err := ioutil.TempFile(os.TempDir(), "azga-installer-*.txt")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer tmpFile.Close()
+
+	client := http.Client{
+		CheckRedirect: func(r *http.Request, via []*http.Request) error {
+			r.URL.Opaque = r.URL.Path
+			return nil
+		},
+	}
+	// Put content on file
+	resp, err := client.Get(url)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	_, err = io.Copy(tmpFile, resp.Body)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	return tmpFile.Name()
 }

@@ -4,10 +4,12 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"log"
+	"os"
 	"path/filepath"
 
 	"github.com/flocknroll/azga/go_installer/addtxtcontentgo"
 	"github.com/flocknroll/azga/go_installer/msfstools"
+	"github.com/flocknroll/azga/go_installer/utils"
 )
 
 type SourceType string
@@ -41,11 +43,11 @@ func main() {
 
 	data, err := ioutil.ReadFile("config.json")
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 	err = json.Unmarshal(data, &config)
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 
 	for _, ce := range config.Config {
@@ -55,8 +57,14 @@ func main() {
 			log.Printf("Checking %s -> %s\n", ce.SourcePath, dest)
 			addtxtcontentgo.AddContent(ce.SourcePath, dest)
 		case Git:
+			tmpFilePath := utils.DownloadContent(ce.SourcePath)
+			defer os.Remove(tmpFilePath)
+
+			dest := filepath.Join(msfsPath, ce.DestPath)
+			log.Printf("Checking %s -> %s\n", ce.SourcePath, dest)
+			addtxtcontentgo.AddContent(tmpFilePath, dest)
 		default:
-			panic("Invalid source type")
+			log.Fatal("Invalid source type")
 		}
 	}
 }

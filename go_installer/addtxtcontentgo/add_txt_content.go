@@ -18,7 +18,7 @@ func rollingHashFile(path string, linesNb int) <-chan []byte {
 		if err == nil {
 			defer f.Close()
 		} else {
-			panic(err)
+			log.Fatal(err)
 		}
 
 		lines := make([]string, linesNb)
@@ -70,13 +70,13 @@ func AddContent(srcPath string, destPath string) {
 		if err == nil {
 			defer f.Close()
 		} else {
-			panic(err)
+			log.Fatal(err)
 		}
 
 		for _, line := range src {
 			_, err = f.WriteString("\n" + line)
 			if err != nil {
-				panic(err)
+				log.Fatal(err)
 			}
 		}
 	}
