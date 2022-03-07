@@ -33,9 +33,6 @@ type ConfigEntry struct {
 }
 
 func main() {
-	// fmt.Println(checkContent("test_data/src_found.txt", "test_data/dest.txt"))
-	// fmt.Println(checkContent("test_data/src_not_found.txt", "test_data/dest.txt"))
-
 	// Configuration
 	var config InstallerConfig
 	var configPath, msfsPath string

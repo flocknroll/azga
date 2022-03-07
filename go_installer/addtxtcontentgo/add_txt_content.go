@@ -45,7 +45,7 @@ func rollingHashFile(path string, linesNb int) <-chan []byte {
 }
 
 // Checks if the source file content if present in the destination file.
-func checkContent(srcPath string, destPath string) bool {
+func CheckContent(srcPath string, destPath string) bool {
 	linesNb, srcHash := utils.HashLines(utils.ReadEntireFile(srcPath))
 
 	for destHash := range rollingHashFile(destPath, linesNb) {
@@ -59,7 +59,7 @@ func checkContent(srcPath string, destPath string) bool {
 
 // Add the content of the source file at the end of the destination file if not already present.
 func AddContent(srcPath string, destPath string) {
-	found := checkContent(srcPath, destPath)
+	found := CheckContent(srcPath, destPath)
 
 	if found {
 		log.Printf("Data found in %s\n", destPath)
