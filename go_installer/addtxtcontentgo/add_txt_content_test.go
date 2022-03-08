@@ -6,6 +6,7 @@ import (
 	"os"
 	"testing"
 
+	"github.com/flocknroll/azga/go_installer/addtxtcontentgo"
 	. "github.com/flocknroll/azga/go_installer/addtxtcontentgo"
 )
 
@@ -59,6 +60,25 @@ F`)
 	dest.Close()
 
 	if CheckContent(src.Name(), dest.Name()) {
+		t.Fail()
+	}
+}
+
+func TestCheckDelimitedSection(t *testing.T) {
+	src, _ := ioutil.TempFile(os.TempDir(), "src*.txt")
+	defer os.Remove(src.Name())
+
+	io.WriteString(src, `
+# Start
+A
+B
+C
+# End`)
+	src.Close()
+
+	s, e, f := addtxtcontentgo.CheckDelimitedSection(src.Name(), "# Start", "# End")
+
+	if !f || s != 2 || e != 6 {
 		t.Fail()
 	}
 }

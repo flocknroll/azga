@@ -81,3 +81,46 @@ func AddContent(srcPath string, destPath string) {
 		}
 	}
 }
+
+// Check if a delimited text section is present in the file
+func CheckDelimitedSection(path string, startDelimiter string, endDelimiter string) (int, int, bool) {
+	f, err := os.OpenFile(path, os.O_RDONLY, 0)
+	if err == nil {
+		defer f.Close()
+	} else {
+		log.Fatal(err)
+	}
+
+	var startLine, endLine int
+
+	lineNb := 0
+	scanner := bufio.NewScanner(f)
+	for scanner.Scan() {
+		lineNb += 1
+		line := scanner.Text()
+		if line == startDelimiter {
+			startLine = lineNb
+		}
+		if line == endDelimiter {
+			endLine = lineNb
+		}
+	}
+
+	return startLine, endLine, startLine > 0 && endLine > 0
+}
+
+func DeleteLines(path string, start int, end int) error {
+	f, err := os.OpenFile(path, os.O_RDONLY, 0)
+	if err == nil {
+		defer f.Close()
+	} else {
+		log.Fatal(err)
+	}
+
+	scanner := bufio.NewScanner(f)
+	for scanner.Scan() {
+
+	}
+
+	return nil
+}
