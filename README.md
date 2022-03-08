@@ -6,6 +6,11 @@ Les contenus des fichiers .txt sont à rajouter dans les fichiers respectifs dan
 
 Chemin : `<Flight Simulator Community Folder>\aerosoft-crj\Data\NavData`
 
+## Installeur
+Un installeur a été implémenté en Go.
+
+Sources : [go_installer](./go_installer)
+
 # Remerciements
 L'Azgharie :relaxed:
 

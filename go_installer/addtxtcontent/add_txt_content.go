@@ -23,7 +23,7 @@ func rollingHashFile(path string, linesNb int) <-chan []byte {
 			log.Fatal(err)
 		}
 
-		lines := make([]string, linesNb)
+		lines := make([]string, 0, linesNb)
 
 		scanner := bufio.NewScanner(f)
 		for scanner.Scan() {
