@@ -13,5 +13,4 @@ https://www.azgharie.net/
 
 # TODO
 - [ ] documenter les colonnes par fichier
-- [ ] script d'installation -> intégrer dans un mod ?
 - [ ] récupérer les valeurs depuis XML et créer un template 

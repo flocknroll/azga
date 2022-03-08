@@ -1,4 +1,4 @@
-package addtxtcontentgo_test
+package addtxtcontent_test
 
 import (
 	"io"
@@ -6,8 +6,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/flocknroll/azga/go_installer/addtxtcontentgo"
-	. "github.com/flocknroll/azga/go_installer/addtxtcontentgo"
+	. "github.com/flocknroll/azga/go_installer/addtxtcontent"
 )
 
 func TestAddContentFound(t *testing.T) {
@@ -76,7 +75,7 @@ C
 # End`)
 	src.Close()
 
-	s, e, f := addtxtcontentgo.CheckDelimitedSection(src.Name(), "# Start", "# End")
+	s, e, f := CheckDelimitedSection(src.Name(), "# Start", "# End")
 
 	if !f || s != 2 || e != 6 {
 		t.Fail()

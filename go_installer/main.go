@@ -8,7 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/flocknroll/azga/go_installer/addtxtcontentgo"
+	"github.com/flocknroll/azga/go_installer/addtxtcontent"
 	"github.com/flocknroll/azga/go_installer/msfstools"
 	"github.com/flocknroll/azga/go_installer/utils"
 )
@@ -71,7 +71,7 @@ func main() {
 				utils.CopyFile(ce.SourcePath, dest)
 			} else {
 				log.Printf("Checking %s -> %s\n", ce.SourcePath, dest)
-				addtxtcontentgo.AddContent(ce.SourcePath, dest)
+				addtxtcontent.AddContent(ce.SourcePath, dest)
 			}
 
 		case Http:
@@ -85,7 +85,12 @@ func main() {
 				utils.CopyFile(tmpFilePath, dest)
 			} else {
 				log.Printf("Checking %s -> %s\n", ce.SourcePath, dest)
-				addtxtcontentgo.AddContent(tmpFilePath, dest)
+
+				// start, end, found := addtxtcontentgo.CheckDelimitedSection(dest, "# AZGA DATA START", "# AZGA DATA END")
+				// if found {
+				// 	addtxtcontentgo.DeleteLines(dest, start, end)
+				// }
+				addtxtcontent.AddContent(tmpFilePath, dest)
 			}
 
 		case Git:

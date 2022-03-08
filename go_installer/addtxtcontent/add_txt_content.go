@@ -1,8 +1,10 @@
-package addtxtcontentgo
+package addtxtcontent
 
 import (
 	"bufio"
 	"bytes"
+	"io"
+	"io/ioutil"
 	"log"
 	"os"
 
@@ -59,6 +61,7 @@ func CheckContent(srcPath string, destPath string) bool {
 
 // Add the content of the source file at the end of the destination file if not already present.
 func AddContent(srcPath string, destPath string) {
+	// TODO: remove check from AddContent
 	found := CheckContent(srcPath, destPath)
 
 	if found {
@@ -109,18 +112,30 @@ func CheckDelimitedSection(path string, startDelimiter string, endDelimiter stri
 	return startLine, endLine, startLine > 0 && endLine > 0
 }
 
-func DeleteLines(path string, start int, end int) error {
+// Delete lines included in the range in the target file
+func DeleteLines(path string, start int, end int) {
 	f, err := os.OpenFile(path, os.O_RDONLY, 0)
+	if err != nil {
+		log.Fatal(err)
+	}
+	tmpFile, _ := ioutil.TempFile(os.TempDir(), "src*.txt")
 	if err == nil {
-		defer f.Close()
+		defer os.Remove(tmpFile.Name())
 	} else {
 		log.Fatal(err)
 	}
 
+	lineNb := 0
 	scanner := bufio.NewScanner(f)
 	for scanner.Scan() {
+		lineNb += 1
 
+		// TODO: better new lines handling
+		line := scanner.Text() + "\n"
+		if lineNb < start || lineNb > end {
+			io.WriteString(tmpFile, line)
+		}
 	}
-
-	return nil
+	f.Close()
+	utils.CopyFile(tmpFile.Name(), path)
 }
