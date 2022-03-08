@@ -46,7 +46,7 @@ func rollingHashFile(path string, linesNb int) <-chan []byte {
 	return ch
 }
 
-// Checks if the source file content if present in the destination file.
+// Check if the source file content if present in the destination file.
 func CheckContent(srcPath string, destPath string) bool {
 	linesNb, srcHash := utils.HashLines(utils.ReadEntireFile(srcPath))
 
@@ -59,34 +59,26 @@ func CheckContent(srcPath string, destPath string) bool {
 	return false
 }
 
-// Add the content of the source file at the end of the destination file if not already present.
+// Add the content of the source file at the end of the destination file.
 func AddContent(srcPath string, destPath string) {
-	// TODO: remove check from AddContent
-	found := CheckContent(srcPath, destPath)
-
-	if found {
-		log.Printf("Data found in %s\n", destPath)
+	src := utils.ReadEntireFile(srcPath)
+	f, err := os.OpenFile(destPath, os.O_APPEND|os.O_WRONLY, os.ModeAppend)
+	if err == nil {
+		defer f.Close()
 	} else {
-		log.Printf("Data not found in %s - appending %s", destPath, srcPath)
-		src := utils.ReadEntireFile(srcPath)
-		f, err := os.OpenFile(destPath, os.O_APPEND|os.O_WRONLY, os.ModeAppend)
-		if err == nil {
-			defer f.Close()
-		} else {
-			log.Fatal(err)
-		}
+		log.Fatal(err)
+	}
 
-		for _, line := range src {
-			_, err = f.WriteString("\n" + line)
-			if err != nil {
-				log.Fatal(err)
-			}
+	for _, line := range src {
+		_, err = f.WriteString("\n" + line)
+		if err != nil {
+			log.Fatal(err)
 		}
 	}
 }
 
-// Check if a delimited text section is present in the file
-func CheckDelimitedSection(path string, startDelimiter string, endDelimiter string) (int, int, bool) {
+// Check if a delimited text section is present in the file.
+func CheckDelimitedSection(path string, startDelimiter string, endDelimiter string) (startLine int, endLine int, totalLines int, found bool) {
 	f, err := os.OpenFile(path, os.O_RDONLY, 0)
 	if err == nil {
 		defer f.Close()
@@ -94,25 +86,23 @@ func CheckDelimitedSection(path string, startDelimiter string, endDelimiter stri
 		log.Fatal(err)
 	}
 
-	var startLine, endLine int
-
-	lineNb := 0
+	totalLines = 0
 	scanner := bufio.NewScanner(f)
 	for scanner.Scan() {
-		lineNb += 1
+		totalLines += 1
 		line := scanner.Text()
 		if line == startDelimiter {
-			startLine = lineNb
+			startLine = totalLines
 		}
 		if line == endDelimiter {
-			endLine = lineNb
+			endLine = totalLines
 		}
 	}
 
-	return startLine, endLine, startLine > 0 && endLine > 0
+	return startLine, endLine, totalLines, startLine > 0 && endLine > 0
 }
 
-// Delete lines included in the range in the target file
+// Delete lines included in the range in the target file.
 func DeleteLines(path string, start int, end int) {
 	f, err := os.OpenFile(path, os.O_RDONLY, 0)
 	if err != nil {
@@ -130,8 +120,11 @@ func DeleteLines(path string, start int, end int) {
 	for scanner.Scan() {
 		lineNb += 1
 
-		// TODO: better new lines handling
-		line := scanner.Text() + "\n"
+		line := scanner.Text()
+
+		if lineNb != start-1 {
+			line += "\n"
+		}
 		if lineNb < start || lineNb > end {
 			io.WriteString(tmpFile, line)
 		}

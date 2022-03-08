@@ -75,9 +75,9 @@ C
 # End`)
 	src.Close()
 
-	s, e, f := CheckDelimitedSection(src.Name(), "# Start", "# End")
+	s, e, l, f := CheckDelimitedSection(src.Name(), "# Start", "# End")
 
-	if !f || s != 2 || e != 6 {
+	if !f || s != 2 || e != 6 || l != 6 {
 		t.Fail()
 	}
 }

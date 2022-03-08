@@ -32,6 +32,28 @@ type ConfigEntry struct {
 	CreateFile bool
 }
 
+// Handle installation process from source to destination
+func handleInstall(srcPath string, destPath string, createFile bool) {
+	if createFile {
+		log.Printf("Copying %s -> %s\n", srcPath, destPath)
+		utils.CopyFile(srcPath, destPath)
+	} else {
+		log.Printf("Checking %s -> %s\n", srcPath, destPath)
+
+		if !addtxtcontent.CheckContent(srcPath, destPath) {
+			start, end, _, found := addtxtcontent.CheckDelimitedSection(destPath, "# AZGA DATA START", "# AZGA DATA END")
+			if found {
+				log.Println("  --> Old version found - deleting")
+				addtxtcontent.DeleteLines(destPath, start, end)
+			}
+			log.Println("  --> Content not found - adding")
+			addtxtcontent.AddContent(srcPath, destPath)
+		} else {
+			log.Println("  --> Content found")
+		}
+	}
+}
+
 func main() {
 	// Configuration
 	var config InstallerConfig
@@ -65,33 +87,15 @@ func main() {
 		switch ce.SourceType {
 		case Local:
 			dest := filepath.Join(msfsPath, ce.DestPath)
-
-			if ce.CreateFile {
-				log.Printf("Copying %s -> %s\n", ce.SourcePath, dest)
-				utils.CopyFile(ce.SourcePath, dest)
-			} else {
-				log.Printf("Checking %s -> %s\n", ce.SourcePath, dest)
-				addtxtcontent.AddContent(ce.SourcePath, dest)
-			}
+			handleInstall(ce.SourcePath, dest, ce.CreateFile)
 
 		case Http:
 			tmpFilePath := utils.DownloadContent(ce.SourcePath)
 			defer os.Remove(tmpFilePath)
+			log.Printf("Downloaded %s -> %s\n", ce.SourcePath, tmpFilePath)
 
 			dest := filepath.Join(msfsPath, ce.DestPath)
-
-			if ce.CreateFile {
-				log.Printf("Copying %s -> %s\n", ce.SourcePath, dest)
-				utils.CopyFile(tmpFilePath, dest)
-			} else {
-				log.Printf("Checking %s -> %s\n", ce.SourcePath, dest)
-
-				// start, end, found := addtxtcontentgo.CheckDelimitedSection(dest, "# AZGA DATA START", "# AZGA DATA END")
-				// if found {
-				// 	addtxtcontentgo.DeleteLines(dest, start, end)
-				// }
-				addtxtcontent.AddContent(tmpFilePath, dest)
-			}
+			handleInstall(tmpFilePath, dest, ce.CreateFile)
 
 		case Git:
 			panic("Not implemented")
