@@ -35,7 +35,7 @@ func rollingHashFile(path string, linesNb int) <-chan []byte {
 			}
 
 			if len(lines) == linesNb {
-				_, hash := utils.HashLines(lines)
+				_, hash := utils.HashLinesCRC32(lines)
 				ch <- hash
 			}
 		}
@@ -48,7 +48,7 @@ func rollingHashFile(path string, linesNb int) <-chan []byte {
 
 // Check if the source file content if present in the destination file.
 func CheckContent(srcPath string, destPath string) bool {
-	linesNb, srcHash := utils.HashLines(utils.ReadEntireFile(srcPath))
+	linesNb, srcHash := utils.HashLinesCRC32(utils.ReadEntireFile(srcPath))
 
 	for destHash := range rollingHashFile(destPath, linesNb) {
 		if bytes.Equal(srcHash, destHash) {
@@ -108,7 +108,7 @@ func DeleteLines(path string, start int, end int) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	tmpFile, _ := ioutil.TempFile(os.TempDir(), "src*.txt")
+	tmpFile, _ := ioutil.TempFile(os.TempDir(), "tmp-azga*.txt")
 	if err == nil {
 		defer os.Remove(tmpFile.Name())
 	} else {

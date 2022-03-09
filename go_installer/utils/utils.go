@@ -3,6 +3,7 @@ package utils
 import (
 	"bufio"
 	"crypto/md5"
+	"hash/crc32"
 	"io"
 	"io/ioutil"
 	"log"
@@ -10,9 +11,23 @@ import (
 	"os"
 )
 
+// Returns a CRC32 digest of the lines.
+// Strips the new line character if present.
+func HashLinesCRC32(lines []string) (int, []byte) {
+	nb := 0
+	crc := crc32.New(crc32.IEEETable)
+
+	for ix, line := range lines {
+		io.WriteString(crc, line)
+		nb = ix + 1
+	}
+
+	return nb, crc.Sum(nil)
+}
+
 // Returns a MD5 digest of the lines.
 // Strips the new line character if present.
-func HashLines(lines []string) (int, []byte) {
+func HashLinesMD5(lines []string) (int, []byte) {
 	nb := 0
 	md5 := md5.New()
 
