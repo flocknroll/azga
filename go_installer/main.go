@@ -43,7 +43,7 @@ func handleInstall(srcPath string, destPath string, createFile bool) {
 		log.Printf("Checking %s -> %s\n", srcPath, destPath)
 
 		st := time.Now()
-		found := addtxtcontent.CheckContent(srcPath, destPath, 2)
+		found, _ := addtxtcontent.CheckContent(srcPath, destPath, 4)
 		et := time.Now()
 		fmt.Println(et.Sub(st))
 

@@ -25,9 +25,10 @@ type HashCheck struct {
 func hashCheckWorker(in <-chan []string, hc *HashCheck) {
 	for data := range in {
 		_, hash := utils.HashLinesMD5(data)
+		found := bytes.Equal(hc.controlHash, hash)
 
 		hc.mutex.Lock()
-		hc.found = hc.found || bytes.Equal(hc.controlHash, hash)
+		hc.found = hc.found || found
 		hc.count++
 		hc.mutex.Unlock()
 
@@ -74,7 +75,7 @@ func rollingReadFile(path string, linesNb int) <-chan []string {
 }
 
 // Check if the source file content if present in the destination file.
-func CheckContent(srcPath string, destPath string, workersNb int) bool {
+func CheckContent(srcPath string, destPath string, workersNb int) (bool, int) {
 	linesNb, srcHash := utils.HashLinesMD5(utils.ReadEntireFile(srcPath))
 	jobs := make(chan []string)
 	var hc HashCheck
@@ -94,7 +95,7 @@ func CheckContent(srcPath string, destPath string, workersNb int) bool {
 
 	hc.wg.Wait()
 
-	return hc.found
+	return hc.found, hc.count
 }
 
 // Add the content of the source file at the end of the destination file.

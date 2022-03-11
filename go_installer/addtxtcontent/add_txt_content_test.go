@@ -33,7 +33,8 @@ F`)
 	src.Close()
 	dest.Close()
 
-	if !CheckContent(src.Name(), dest.Name(), 1) {
+	found, _ := CheckContent(src.Name(), dest.Name(), 1)
+	if found {
 		t.Fail()
 	}
 }
@@ -60,7 +61,8 @@ F`)
 	src.Close()
 	dest.Close()
 
-	if CheckContent(src.Name(), dest.Name(), 1) {
+	found, _ := CheckContent(src.Name(), dest.Name(), 1)
+	if found {
 		t.Fail()
 	}
 }
