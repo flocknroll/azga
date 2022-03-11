@@ -11,7 +11,7 @@ import (
 	"github.com/flocknroll/azga/go_installer/msfstools"
 )
 
-func TestAddContentFound(t *testing.T) {
+func TestCheckContentFound(t *testing.T) {
 	src, _ := ioutil.TempFile(os.TempDir(), "src*.txt")
 	dest, _ := ioutil.TempFile(os.TempDir(), "dest*.txt")
 	defer os.Remove(src.Name())
@@ -34,12 +34,12 @@ F`)
 	dest.Close()
 
 	found, _ := CheckContent(src.Name(), dest.Name(), 1)
-	if found {
+	if !found {
 		t.Fail()
 	}
 }
 
-func TestAddContentNotFound(t *testing.T) {
+func TestCheckContentNotFound(t *testing.T) {
 	src, _ := ioutil.TempFile(os.TempDir(), "src*.txt")
 	dest, _ := ioutil.TempFile(os.TempDir(), "dest*.txt")
 	defer os.Remove(src.Name())
