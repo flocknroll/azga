@@ -3,10 +3,12 @@ package main
 import (
 	"encoding/json"
 	"flag"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
+	"time"
 
 	"github.com/flocknroll/azga/go_installer/addtxtcontent"
 	"github.com/flocknroll/azga/go_installer/msfstools"
@@ -40,7 +42,12 @@ func handleInstall(srcPath string, destPath string, createFile bool) {
 	} else {
 		log.Printf("Checking %s -> %s\n", srcPath, destPath)
 
-		if !addtxtcontent.CheckContent(srcPath, destPath) {
+		st := time.Now()
+		found := addtxtcontent.CheckContent(srcPath, destPath, 2)
+		et := time.Now()
+		fmt.Println(et.Sub(st))
+
+		if !found {
 			start, end, _, found := addtxtcontent.CheckDelimitedSection(destPath, "# AZGA DATA START", "# AZGA DATA END")
 			if found {
 				log.Println("  --> Old version found - deleting")

@@ -33,7 +33,7 @@ F`)
 	src.Close()
 	dest.Close()
 
-	if !CheckContent(src.Name(), dest.Name()) {
+	if !CheckContent(src.Name(), dest.Name(), 1) {
 		t.Fail()
 	}
 }
@@ -60,7 +60,7 @@ F`)
 	src.Close()
 	dest.Close()
 
-	if CheckContent(src.Name(), dest.Name()) {
+	if CheckContent(src.Name(), dest.Name(), 1) {
 		t.Fail()
 	}
 }
@@ -115,5 +115,5 @@ func BenchmarkCheckContent(b *testing.B) {
 
 	path, _ := msfstools.GetPackageFolderPath()
 	dest := filepath.Join(path, "Community/aerosoft-crj/Data/NavData/Waypoints.txt")
-	CheckContent(src.Name(), dest)
+	CheckContent(src.Name(), dest, 1)
 }

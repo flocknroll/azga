@@ -7,13 +7,41 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"sync"
 
 	"github.com/flocknroll/azga/go_installer/utils"
 )
 
+// Structure to hold hash check job infos
+type HashCheck struct {
+	controlHash []byte
+	mutex       sync.Mutex
+	wg          sync.WaitGroup
+	found       bool
+	count       int
+}
+
+// Worker thah hash, compare with the control and merge the result
+func hashCheckWorker(in <-chan []string, hc *HashCheck) {
+	for data := range in {
+		_, hash := utils.HashLinesMD5(data)
+
+		hc.mutex.Lock()
+		hc.found = hc.found || bytes.Equal(hc.controlHash, hash)
+		hc.count++
+		hc.mutex.Unlock()
+
+		if hc.found {
+			break
+		}
+	}
+
+	hc.wg.Done()
+}
+
 // Iterate through a file and returns the MD5 digests of the lines grouped by the specified number.
-func rollingHashFile(path string, linesNb int) <-chan []byte {
-	ch := make(chan []byte)
+func rollingReadFile(path string, linesNb int) <-chan []string {
+	ch := make(chan []string)
 
 	go func() {
 		f, err := os.OpenFile(path, os.O_RDONLY, 0)
@@ -35,8 +63,7 @@ func rollingHashFile(path string, linesNb int) <-chan []byte {
 			}
 
 			if len(lines) == linesNb {
-				_, hash := utils.HashLinesCRC32(lines)
-				ch <- hash
+				ch <- lines
 			}
 		}
 
@@ -47,16 +74,27 @@ func rollingHashFile(path string, linesNb int) <-chan []byte {
 }
 
 // Check if the source file content if present in the destination file.
-func CheckContent(srcPath string, destPath string) bool {
-	linesNb, srcHash := utils.HashLinesCRC32(utils.ReadEntireFile(srcPath))
+func CheckContent(srcPath string, destPath string, workersNb int) bool {
+	linesNb, srcHash := utils.HashLinesMD5(utils.ReadEntireFile(srcPath))
+	jobs := make(chan []string)
+	var hc HashCheck
+	hc.controlHash = srcHash
 
-	for destHash := range rollingHashFile(destPath, linesNb) {
-		if bytes.Equal(srcHash, destHash) {
-			return true
-		}
+	for i := 1; i <= workersNb; i++ {
+		hc.wg.Add(1)
+		go hashCheckWorker(jobs, &hc)
 	}
 
-	return false
+	go func() {
+		for lines := range rollingReadFile(destPath, linesNb) {
+			jobs <- lines
+		}
+		close(jobs)
+	}()
+
+	hc.wg.Wait()
+
+	return hc.found
 }
 
 // Add the content of the source file at the end of the destination file.
