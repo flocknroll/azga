@@ -3,17 +3,23 @@
         {
             "SourceType": "http",
             "SourcePath": "https://raw.githubusercontent.com/flocknroll/azga/main/Navaids.txt",
-            "DestPath": "Community/aerosoft-crj/Data/NavData/Navaids.txt"
+            "DestPath": "Community/aerosoft-crj/Data/NavData/Navaids.txt",
+            "StartTag": "# AZGA DATA START",
+            "EndTag": "# AZGA DATA END"
         },
         {
             "SourceType": "http",
             "SourcePath": "https://raw.githubusercontent.com/flocknroll/azga/main/Waypoints.txt",
-            "DestPath": "Community/aerosoft-crj/Data/NavData/Waypoints.txt"
+            "DestPath": "Community/aerosoft-crj/Data/NavData/Waypoints.txt",
+            "StartTag": "# AZGA DATA START",
+            "EndTag": "# AZGA DATA END"
         },
         {
             "SourceType": "http",
             "SourcePath": "https://raw.githubusercontent.com/flocknroll/azga/main/Airports_v2.txt",
-            "DestPath": "Community/aerosoft-crj/Data/NavData/Airports.txt"
+            "DestPath": "Community/aerosoft-crj/Data/NavData/Airports.txt",
+            "StartTag": "# AZGA DATA START",
+            "EndTag": "# AZGA DATA END"
         },
         {
             "SourceType": "http",

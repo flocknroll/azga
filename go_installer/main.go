@@ -30,11 +30,13 @@ type ConfigEntry struct {
 	SourcePath string
 	DestPath   string
 	CreateFile bool
+	StartTag   string
+	EndTag     string
 }
 
 // Handle installation process from source to destination
-func handleInstall(srcPath string, destPath string, createFile bool) {
-	if createFile {
+func handleInstall(srcPath string, destPath string, ce *ConfigEntry) {
+	if ce.CreateFile {
 		log.Printf("Copying %s -> %s\n", srcPath, destPath)
 		utils.CopyFile(srcPath, destPath)
 	} else {
@@ -43,7 +45,7 @@ func handleInstall(srcPath string, destPath string, createFile bool) {
 		found, _ := addtxtcontent.CheckContent(srcPath, destPath, 4)
 
 		if !found {
-			start, end, _, found := addtxtcontent.CheckDelimitedSection(destPath, "# AZGA DATA START", "# AZGA DATA END")
+			start, end, _, found := addtxtcontent.CheckDelimitedSection(destPath, ce.StartTag, ce.EndTag)
 			if found {
 				log.Println("  --> Old version found - deleting")
 				addtxtcontent.DeleteLines(destPath, start, end)
@@ -89,7 +91,7 @@ func main() {
 		switch ce.SourceType {
 		case Local:
 			dest := filepath.Join(msfsPath, ce.DestPath)
-			handleInstall(ce.SourcePath, dest, ce.CreateFile)
+			handleInstall(ce.SourcePath, dest, &ce)
 
 		case Http:
 			tmpFilePath := utils.DownloadContent(ce.SourcePath)
@@ -97,7 +99,7 @@ func main() {
 			log.Printf("Downloaded %s -> %s\n", ce.SourcePath, tmpFilePath)
 
 			dest := filepath.Join(msfsPath, ce.DestPath)
-			handleInstall(tmpFilePath, dest, ce.CreateFile)
+			handleInstall(tmpFilePath, dest, &ce)
 
 		case Git:
 			panic("Not implemented")
