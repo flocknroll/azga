@@ -40,7 +40,7 @@ func hashCheckWorker(in <-chan []string, hc *HashCheck) {
 	hc.wg.Done()
 }
 
-// Iterate through a file and returns the MD5 digests of the lines grouped by the specified number.
+// Iterate through a file and returns batches of lines.
 func rollingReadFile(path string, linesNb int) <-chan []string {
 	ch := make(chan []string)
 
