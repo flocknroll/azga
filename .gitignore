@@ -172,3 +172,5 @@ cython_debug/
 
 # Go workspace file
 go.work
+
+go_installer/go_installer*
